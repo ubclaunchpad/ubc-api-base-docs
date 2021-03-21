@@ -19,27 +19,33 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "LogRocket Express API with Swagger",
-      version: "0.1.0",
+      title: "UBC APIs documentation",
+      version: "1.0.0",
       description:
-        "This is a simple CRUD API application made with Express and documented with Swagger",
+        "This is a simple web app with Swagger API documentation for several APIs pertaining to UBC",
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html",
       },
       contact: {
-        name: "LogRocket",
-        url: "https://logrocket.com",
-        email: "info@email.com",
+        name: "UBC Launchpad",
+        url: "https://ubclaunchpad.com",
+        email: "admin@ubclaunchpad.com",
       },
     },
-    servers: [
-      {
-        url: "http://localhost:3000/books",
-      },
-    ],
+    host: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com",
+    basePath: '/test/',
+    // servers: [
+    //   {
+    //     url: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com/",
+    //   },
+    //   {
+    //     url: "lol"
+    //   }
+    // ],
   },
-  apis: ["./routes/books.js"],
+  // apis: ["./routes/books.js"],
+  apis: ['./config/documentation.yaml'],
 };
 
 const specs = swaggerJsdoc(options);

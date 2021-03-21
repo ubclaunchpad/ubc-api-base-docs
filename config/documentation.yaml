@@ -1,0 +1,306 @@
+#paths:
+#  /api/v1/clusters/:
+#    get:
+#      operationId: ListClusters
+#      summary: List available clusters
+#      responses:
+#        200:
+#          description: OK
+#          schema:
+#            type: array
+#            items:
+#              $ref: '#/definitions/Cluster'
+#      security:
+#        - keystone: []
+#    post:
+#      operationId: CreateCluster
+#      summary: Create a cluster
+#      responses:
+#        200:
+#          description: OK
+#          schema:
+#            $ref: '#/definitions/Cluster'
+#      parameters:
+#        - name: body
+#          in: body
+#          required: true
+#          schema:
+#            $ref: '#/definitions/Cluster'
+#      security:
+#        - keystone: []
+#
+#definitions:
+#  Cluster:
+#    type: object
+#    properties:
+#      name:
+#        description: name of the cluster
+#        type: string
+
+#---
+#swagger: "2.0"
+#info:
+#  version: "2021-03-14T18:26:06Z"
+#  title: "UBCCourses"
+#host: "o1ox6y8yql.execute-api.us-east-2.amazonaws.com"
+#basePath: "/test"
+#schemes:
+#  - "https"
+#tags:
+#  - name: course-info
+#    description: Everything about your Pets
+#    externalDocs:
+#      description: Find out more
+#      url: 'http://swagger.io'
+#  - name: courseavg
+#    description: Operations about user
+#  - name: user
+#    description: Access to Petstore orders
+#    externalDocs:
+#      description: Find out more about our store
+#      url: 'http://swagger.io'
+paths:
+  /course-info/{details-level}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "details-level"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /course-info/{details-level}/{session}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "details-level"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /course-info/{details-level}/{session}/{subject}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "details-level"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /course-info/{details-level}/{session}/{subject}/{course}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "details-level"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /course-info/{details-level}/{session}/{subject}/{course}/{section}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "details-level"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "section"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/{functionality}/{p1}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "p1"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "functionality"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/{functionality}/{p1}/{p2}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "p2"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p1"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "functionality"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/{functionality}/{p1}/{p2}/{p3}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "p2"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p1"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "functionality"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p3"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/{functionality}/{p1}/{p2}/{p3}/{p4}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "p2"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p1"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "functionality"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p4"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p3"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/{functionality}/{p1}/{p2}/{p3}/{p4}/{p5}:
+    get:
+      produces:
+        - "application/json"
+      parameters:
+        - name: "p2"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p1"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p5"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "functionality"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p4"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "p3"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
