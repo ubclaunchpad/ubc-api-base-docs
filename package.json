@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"start": "node ./src/server.js",
-		"build:lambda": "netlify-lambda build src"
+		"build:netlify-lambda": "netlify-lambda build src"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
