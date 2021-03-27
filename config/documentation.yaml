@@ -46,22 +46,22 @@
 #basePath: "/test"
 #schemes:
 #  - "https"
-#tags:
-#  - name: course-info
-#    description: Everything about your Pets
-#    externalDocs:
-#      description: Find out more
-#      url: 'http://swagger.io'
-#  - name: courseavg
-#    description: Operations about user
-#  - name: user
-#    description: Access to Petstore orders
-#    externalDocs:
-#      description: Find out more about our store
-#      url: 'http://swagger.io'
+tags:
+  - name: Course Information
+    description: Real time course info
+    externalDocs:
+      description: Credits to
+      url: 'https://github.com/qstevens'
+  - name: Course Averages
+    description: Historical class averages
+    externalDocs:
+      description: Credits to
+      url: 'https://donneyfan.com/'
 paths:
   /course-info/{details-level}:
     get:
+      tags:
+        - Course Information
       produces:
         - "application/json"
       parameters:
@@ -76,6 +76,8 @@ paths:
             $ref: "#/definitions/Empty"
   /course-info/{details-level}/{session}:
     get:
+      tags:
+        - Course Information
       produces:
         - "application/json"
       parameters:
@@ -94,6 +96,8 @@ paths:
             $ref: "#/definitions/Empty"
   /course-info/{details-level}/{session}/{subject}:
     get:
+      tags:
+        - Course Information
       produces:
         - "application/json"
       parameters:
@@ -116,6 +120,8 @@ paths:
             $ref: "#/definitions/Empty"
   /course-info/{details-level}/{session}/{subject}/{course}:
     get:
+      tags:
+        - Course Information
       produces:
         - "application/json"
       parameters:
@@ -142,6 +148,8 @@ paths:
             $ref: "#/definitions/Empty"
   /course-info/{details-level}/{session}/{subject}/{course}/{section}:
     get:
+      tags:
+        - Course Information
       produces:
         - "application/json"
       parameters:
@@ -172,6 +180,8 @@ paths:
             $ref: "#/definitions/Empty"
   /coursesavg/{functionality}/{p1}:
     get:
+      tags:
+        - Course Averages
       produces:
         - "application/json"
       parameters:
@@ -190,6 +200,8 @@ paths:
             $ref: "#/definitions/Empty"
   /coursesavg/{functionality}/{p1}/{p2}:
     get:
+      tags:
+        - Course Averages
       produces:
         - "application/json"
       parameters:
@@ -212,6 +224,8 @@ paths:
             $ref: "#/definitions/Empty"
   /coursesavg/{functionality}/{p1}/{p2}/{p3}:
     get:
+      tags:
+        - Course Averages
       produces:
         - "application/json"
       parameters:
@@ -238,6 +252,8 @@ paths:
             $ref: "#/definitions/Empty"
   /coursesavg/{functionality}/{p1}/{p2}/{p3}/{p4}:
     get:
+      tags:
+        - Course Averages
       produces:
         - "application/json"
       parameters:
@@ -268,6 +284,8 @@ paths:
             $ref: "#/definitions/Empty"
   /coursesavg/{functionality}/{p1}/{p2}/{p3}/{p4}/{p5}:
     get:
+      tags:
+        - Course Averages
       produces:
         - "application/json"
       parameters:

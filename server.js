@@ -11,8 +11,6 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use("/books", require("./routes/books"));
-
 const PORT = process.env.PORT || 3000;
 
 const options = {
@@ -35,14 +33,11 @@ const options = {
     },
     host: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com",
     basePath: '/test/',
-    // servers: [
-    //   {
-    //     url: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com/",
-    //   },
-    //   {
-    //     url: "lol"
-    //   }
-    // ],
+    servers: [
+      {
+        url: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com/api",
+      }
+    ],
   },
   // apis: ["./routes/books.js"],
   apis: ['./config/documentation.yaml'],
@@ -50,7 +45,7 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 app.use(
-  "/tester",
+  "/",
   swaggerUi.serve,
   swaggerUi.setup(specs)
 );
