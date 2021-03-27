@@ -3,12 +3,15 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "node server.js"
+		"start": "node ./src/server.js",
+		"build:lambda": "netlify-lambda build src"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
 		"express": "^4.17.1",
+		"netlify-lambda": "^2.0.3",
 		"openapi-types": "^7.2.3",
+		"serverless-http": "^2.7.0",
 		"swagger-jsdoc": "^6.0.8",
 		"swagger-ui-express": "^4.1.6"
 	}

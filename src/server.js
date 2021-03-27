@@ -1,19 +1,20 @@
-var express = require("express"),
-  bodyParser = require("body-parser"),
-  swaggerJsdoc = require("swagger-jsdoc"),
-  swaggerUi = require("swagger-ui-express");
+const express = require('express');
+const serverless = require('serverless-http');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const bodyParser = require('body-parser');
 
 const app = express();
+const router = express.Router();
+
+const PORT = process.env.PORT || 3000;
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
 app.use(bodyParser.json());
-
-app.use("/books", require("./routes/books"));
-
-const PORT = process.env.PORT || 3000;
 
 const options = {
   definition: {
@@ -49,12 +50,13 @@ const options = {
 };
 
 const specs = swaggerJsdoc(options);
-app.use(
-  "/tester",
-  swaggerUi.serve,
-  swaggerUi.setup(specs)
-);
+
+router.use('/books', require('./routes/books'));
+router.use('/tester', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/.netlify/functions/server', router);
 
 app.listen(PORT);
+console.debug('Server listening on port: ' + PORT);
 
-console.debug("Server listening on port: " + PORT);
+module.export = app;
+module.exports.handler = serverless(app);
