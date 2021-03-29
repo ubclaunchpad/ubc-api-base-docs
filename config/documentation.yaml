@@ -178,18 +178,31 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /coursesavg/{functionality}/{p1}:
+# Retrieve Grade Distributions 
+  /coursesavg/grades/{campus}/{yearsession}/{subject}/{course}/{section}:
     get:
       tags:
         - Course Averages
       produces:
         - "application/json"
       parameters:
-        - name: "p1"
+        - name: "campus"
           in: "path"
           required: true
           type: "string"
-        - name: "functionality"
+        - name: "yearsession"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "course"
+          required: true
+          type: "string"
+        - name: "section"
           in: "path"
           required: true
           type: "string"
@@ -198,22 +211,26 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /coursesavg/{functionality}/{p1}/{p2}:
+  /coursesavg/grades/{campus}/{yearsession}/{subject}/{course}:
     get:
       tags:
         - Course Averages
       produces:
         - "application/json"
       parameters:
-        - name: "p2"
+        - name: "campus"
           in: "path"
           required: true
           type: "string"
-        - name: "p1"
+        - name: "yearsession"
           in: "path"
           required: true
           type: "string"
-        - name: "functionality"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
           in: "path"
           required: true
           type: "string"
@@ -222,26 +239,22 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /coursesavg/{functionality}/{p1}/{p2}/{p3}:
+  /coursesavg/grades/{campus}/{yearsession}/{subject}:
     get:
       tags:
         - Course Averages
       produces:
         - "application/json"
       parameters:
-        - name: "p2"
+        - name: "campus"
           in: "path"
           required: true
           type: "string"
-        - name: "p1"
+        - name: "yearsession"
           in: "path"
           required: true
           type: "string"
-        - name: "functionality"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "p3"
+        - name: "subject"
           in: "path"
           required: true
           type: "string"
@@ -250,30 +263,18 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /coursesavg/{functionality}/{p1}/{p2}/{p3}/{p4}:
+  /coursesavg/grades/{campus}/{yearsession}:
     get:
       tags:
         - Course Averages
       produces:
         - "application/json"
       parameters:
-        - name: "p2"
+        - name: "campus"
           in: "path"
           required: true
           type: "string"
-        - name: "p1"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "functionality"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "p4"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "p3"
+        - name: "yearsession"
           in: "path"
           required: true
           type: "string"
@@ -282,34 +283,256 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /coursesavg/{functionality}/{p1}/{p2}/{p3}/{p4}/{p5}:
+# Filters
+  /coursesavg/sections/{campus}/{yearsession}/{subject}/{course}:
     get:
       tags:
         - Course Averages
       produces:
         - "application/json"
       parameters:
-        - name: "p2"
+        - name: "campus"
           in: "path"
           required: true
           type: "string"
-        - name: "p1"
+        - name: "yearsession"
           in: "path"
           required: true
           type: "string"
-        - name: "p5"
+        - name: "subject"
           in: "path"
           required: true
           type: "string"
-        - name: "functionality"
+        - name: "course"
           in: "path"
           required: true
           type: "string"
-        - name: "p4"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/courses/{campus}/{yearsession}/{subject}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
           in: "path"
           required: true
           type: "string"
-        - name: "p3"
+        - name: "yearsession"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/courses/{campus}/{subject}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/subjects/{campus}/{yearsession}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "yearsession"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"     
+  /coursesavg/subjects/{campus}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/yearsessions/{campus}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+# Course Profile Data
+  /coursesavg/course-statistics/{campus}/{subject}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/course-statistics/{campus}/{subject}/{course}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/course-statistics/distributions/{campus}/{subject}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/course-statistics/distributions/{campus}/{subject}/{course}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/course-statistics/teaching-team/{campus}/{subject}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /coursesavg/course-statistics/teaching-team/{campus}/{subject}/{course}:
+    get:
+      tags:
+        - Course Averages
+      produces:
+        - "application/json"
+      parameters:
+        - name: "campus"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
           in: "path"
           required: true
           type: "string"
