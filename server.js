@@ -39,7 +39,6 @@ const options = {
       }
     ],
   },
-  // apis: ["./routes/books.js"],
   apis: ['./config/documentation.yaml'],
 };
 
