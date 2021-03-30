@@ -58,23 +58,7 @@ tags:
       description: Credits to
       url: 'https://donneyfan.com/'
 paths:
-  /course-info/{details-level}:
-    get:
-      tags:
-        - Course Information
-      produces:
-        - "application/json"
-      parameters:
-        - name: "details-level"
-          in: "path"
-          required: true
-          type: "string"
-      responses:
-        "200":
-          description: "200 response"
-          schema:
-            $ref: "#/definitions/Empty"
-  /course-info/{details-level}/{session}:
+  /course-info/overview/{session}/{subject}:
     get:
       tags:
         - Course Information
@@ -85,7 +69,7 @@ paths:
           in: "path"
           required: true
           type: "string"
-        - name: "details-level"
+        - name: "subject"
           in: "path"
           required: true
           type: "string"
@@ -94,42 +78,18 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /course-info/{details-level}/{session}/{subject}:
+  /course-info/overview/{session}/{subject}/{course}:
     get:
       tags:
         - Course Information
       produces:
         - "application/json"
       parameters:
-        - name: "subject"
-          in: "path"
-          required: true
-          type: "string"
         - name: "session"
           in: "path"
           required: true
           type: "string"
-        - name: "details-level"
-          in: "path"
-          required: true
-          type: "string"
-      responses:
-        "200":
-          description: "200 response"
-          schema:
-            $ref: "#/definitions/Empty"
-  /course-info/{details-level}/{session}/{subject}/{course}:
-    get:
-      tags:
-        - Course Information
-      produces:
-        - "application/json"
-      parameters:
         - name: "subject"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "details-level"
           in: "path"
           required: true
           type: "string"
@@ -137,27 +97,23 @@ paths:
           in: "path"
           required: true
           type: "string"
-        - name: "session"
-          in: "path"
-          required: true
-          type: "string"
       responses:
         "200":
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-  /course-info/{details-level}/{session}/{subject}/{course}/{section}:
+  /course-info/overview/{session}/{subject}/{course}/{section}:
     get:
       tags:
         - Course Information
       produces:
         - "application/json"
       parameters:
-        - name: "subject"
+        - name: "session"
           in: "path"
           required: true
           type: "string"
-        - name: "details-level"
+        - name: "subject"
           in: "path"
           required: true
           type: "string"
@@ -169,7 +125,24 @@ paths:
           in: "path"
           required: true
           type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+
+  /course-info/details/{session}/{subject}:
+    get:
+      tags:
+        - Course Information
+      produces:
+        - "application/json"
+      parameters:
         - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
           in: "path"
           required: true
           type: "string"
@@ -178,7 +151,60 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-# Retrieve Grade Distributions 
+  /course-info/details/{session}/{subject}/{course}:
+    get:
+      tags:
+        - Course Information
+      produces:
+        - "application/json"
+      parameters:
+        - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /course-info/details/{session}/{subject}/{course}/{section}:
+    get:
+      tags:
+        - Course Information
+      produces:
+        - "application/json"
+      parameters:
+        - name: "session"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "subject"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "course"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "section"
+          in: "path"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+
+  # Retrieve Grade Distributions
   /coursesavg/grades/{campus}/{yearsession}/{subject}/{course}/{section}:
     get:
       tags:
@@ -283,7 +309,7 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-# Filters
+  # Filters
   /coursesavg/sections/{campus}/{yearsession}/{subject}/{course}:
     get:
       tags:
@@ -375,7 +401,7 @@ paths:
         "200":
           description: "200 response"
           schema:
-            $ref: "#/definitions/Empty"     
+            $ref: "#/definitions/Empty"
   /coursesavg/subjects/{campus}:
     get:
       tags:
@@ -408,7 +434,7 @@ paths:
           description: "200 response"
           schema:
             $ref: "#/definitions/Empty"
-# Course Profile Data
+  # Course Profile Data
   /coursesavg/course-statistics/{campus}/{subject}:
     get:
       tags:
