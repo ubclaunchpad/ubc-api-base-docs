@@ -69,10 +69,12 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Subject example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -89,6 +91,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2019W"
         - name: "subject"
           in: "path"
           required: true
@@ -113,6 +116,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2019W"
         - name: "subject"
           in: "path"
           required: true
@@ -142,6 +146,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2019W"
         - name: "subject"
           in: "path"
           required: true
@@ -162,6 +167,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2019W"
         - name: "subject"
           in: "path"
           required: true
@@ -186,6 +192,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2019W"
         - name: "subject"
           in: "path"
           required: true
@@ -216,10 +223,19 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+#              type: "string"
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
           type: "string"
+          description: "Year session example: 2018S"
         - name: "subject"
           in: "path"
           required: true
@@ -248,6 +264,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
@@ -276,6 +299,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
@@ -300,6 +330,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
@@ -321,6 +358,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
@@ -349,6 +393,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
@@ -373,6 +424,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
@@ -393,6 +451,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "yearsession"
           in: "path"
           required: true
@@ -413,6 +478,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
       responses:
         "200":
           description: "200 response"
@@ -429,6 +501,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
       responses:
         "200":
           description: "200 response"
@@ -446,6 +525,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
@@ -466,6 +552,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
@@ -490,6 +583,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
@@ -510,6 +610,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
@@ -534,6 +641,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
@@ -554,6 +668,13 @@ paths:
           in: "path"
           required: true
           type: "string"
+          schema:
+            type: array
+            items:
+              default: UBCV
+              enum:
+                - UBCV
+                - UBCO
         - name: "subject"
           in: "path"
           required: true
