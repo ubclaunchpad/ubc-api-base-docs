@@ -1,51 +1,3 @@
-#paths:
-#  /api/v1/clusters/:
-#    get:
-#      operationId: ListClusters
-#      summary: List available clusters
-#      responses:
-#        200:
-#          description: OK
-#          schema:
-#            type: array
-#            items:
-#              $ref: '#/definitions/Cluster'
-#      security:
-#        - keystone: []
-#    post:
-#      operationId: CreateCluster
-#      summary: Create a cluster
-#      responses:
-#        200:
-#          description: OK
-#          schema:
-#            $ref: '#/definitions/Cluster'
-#      parameters:
-#        - name: body
-#          in: body
-#          required: true
-#          schema:
-#            $ref: '#/definitions/Cluster'
-#      security:
-#        - keystone: []
-#
-#definitions:
-#  Cluster:
-#    type: object
-#    properties:
-#      name:
-#        description: name of the cluster
-#        type: string
-
-#---
-#swagger: "2.0"
-#info:
-#  version: "2021-03-14T18:26:06Z"
-#  title: "UBCCourses"
-#host: "o1ox6y8yql.execute-api.us-east-2.amazonaws.com"
-#basePath: "/test"
-#schemes:
-#  - "https"
 tags:
   - name: Course Information
     description: Real time course info
@@ -69,12 +21,12 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2019W"
+          description: "Academic year. Example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
-          description: "Subject example: CPSC"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -91,15 +43,17 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2019W"
+          description: "Academic year. Example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           description: "200 response"
@@ -116,15 +70,17 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2019W"
+          description: "Academic year. Example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
         - name: "section"
           in: "path"
           required: true
@@ -146,11 +102,12 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2019W"
+          description: "Academic year. Example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -167,15 +124,17 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2019W"
+          description: "Academic year. Example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           description: "200 response"
@@ -192,15 +151,17 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2019W"
+          description: "Academic year. Example: 2019W"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
         - name: "section"
           in: "path"
           required: true
@@ -235,15 +196,17 @@ paths:
           in: "path"
           required: true
           type: "string"
-          description: "Year session example: 2018S"
+          description: "Academic year. Example: 2018S"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
         - name: "section"
           in: "path"
           required: true
@@ -275,14 +238,17 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Academic year. Example: 2018S"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           description: "200 response"
@@ -310,10 +276,12 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Academic year. Example: 2018S"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -341,6 +309,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Academic year. Example: 2018S"
       responses:
         "200":
           description: "200 response"
@@ -369,14 +338,17 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Academic year. Example: 2018S"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           description: "200 response"
@@ -404,10 +376,12 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Academic year. Example: 2018S"
         - name: "subject"
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -435,6 +409,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -462,6 +437,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Academic year. Example: 2018S"
       responses:
         "200":
           description: "200 response"
@@ -536,6 +512,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -563,10 +540,12 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           description: "200 response"
@@ -594,6 +573,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -621,10 +601,12 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           description: "200 response"
@@ -652,6 +634,7 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
       responses:
         "200":
           description: "200 response"
@@ -679,10 +662,12 @@ paths:
           in: "path"
           required: true
           type: "string"
+          description: "Course code. Example: CPSC"
         - name: "course"
           in: "path"
           required: true
           type: "string"
+          description: "Course number"
       responses:
         "200":
           schema:
