@@ -12,6 +12,7 @@ app.use(
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
+const API_URL = "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com";
 
 const options = {
   definition: {
@@ -31,11 +32,11 @@ const options = {
         email: "admin@ubclaunchpad.com",
       },
     },
-    host: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com",
+    host: API_URL,
     basePath: '/test/',
     servers: [
       {
-        url: "https://o1ox6y8yql.execute-api.us-east-2.amazonaws.com/api",
+        url: API_URL + "/api",
       }
     ],
   },
